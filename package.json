@@ -1,0 +1,33 @@
+{
+  "name": "restaurant-order-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev start:dev",
+    "dev:api": "turbo run start:dev --filter=api",
+    "dev:frontend": "turbo run dev --filter=frontend",
+    "start:offline": "turbo run start:offline --filter=api",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "turbo run format",
+    "format:check": "turbo run format:check",
+    "typecheck": "turbo run typecheck type-check",
+    "test": "turbo run test",
+    "infra:up": "pnpm --filter api run infra:up",
+    "infra:down": "pnpm --filter api run infra:down",
+    "infra:ps": "pnpm --filter api run infra:ps",
+    "infra:logs": "pnpm --filter api run infra:logs",
+    "infra:restart": "pnpm --filter api run infra:restart",
+    "infra:clean": "pnpm --filter api run infra:clean",
+    "seed": "pnpm --filter api run seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=24.13.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

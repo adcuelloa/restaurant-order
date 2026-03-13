@@ -1,0 +1,17 @@
+/** Prettier config (Tailwind plugin for class sorting). */
+export default {
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  semi: true,
+  singleQuote: false,
+  quoteProps: "as-needed",
+  trailingComma: "es5",
+  bracketSpacing: true,
+  bracketSameLine: false,
+  arrowParens: "always",
+  endOfLine: "lf",
+  embeddedLanguageFormatting: "auto",
+  singleAttributePerLine: false,
+  plugins: ["prettier-plugin-tailwindcss"],
+};

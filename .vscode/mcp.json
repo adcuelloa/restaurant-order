@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "Playwright MCP": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "Chrome DevTools MCP": {
+      "command": "npx",
+      "args": ["--registry", "https://registry.npmjs.org", "chrome-devtools-mcp@0.17.3"]
+    },
+    "Git MCP": {
+      "command": "uvx",
+      "args": ["mcp-server-git"]
+    }
+  }
+}

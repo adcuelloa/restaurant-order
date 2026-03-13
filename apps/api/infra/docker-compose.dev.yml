@@ -1,0 +1,37 @@
+# Development infrastructure.
+# Usage: docker compose -f infra/docker-compose.dev.yml up -d
+
+services:
+  mongodb_dev:
+    image: mongo:7
+    container_name: restaurant_mongo_dev
+    environment:
+      MONGO_INITDB_DATABASE: restaurant
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_dev_data:/data/db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis_dev:
+    image: redis:7-alpine
+    container_name: restaurant_redis_dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_dev_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  mongo_dev_data:
+  redis_dev_data:

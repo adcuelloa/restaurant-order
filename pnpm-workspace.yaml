@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+
+allowBuilds:
+  "@nestjs/core": true
+  esbuild: true
+  msw: true
+  serverless: true
+
+minimumReleaseAge: 1440
