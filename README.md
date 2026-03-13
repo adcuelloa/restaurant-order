@@ -208,9 +208,9 @@ The custom logger (`apps/api/src/config/logger.ts`) masks PII in structured logs
 
 ---
 
-## Acceptance criteria (reviewer)
+## Quick start checklist
 
-A reviewer should be able to:
+You should be able to:
 
 1. Clone the repo and run `pnpm install`
 2. Start infra with `pnpm run infra:up`
