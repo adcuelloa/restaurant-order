@@ -25,6 +25,8 @@ export interface AppendEventInput {
 
 export interface TimelineEventDTO {
   eventId: string;
+  /** ISO 8601 time when the event occurred (authoritative chronological field). */
+  occurredAt: string;
   timestamp: string;
   orderId: string;
   userId: string;
@@ -129,9 +131,11 @@ export class TimelineService {
         correlationId: string;
         payload: Record<string, unknown>;
       };
+      const iso = doc.timestamp.toISOString();
       return {
         eventId: doc.eventId,
-        timestamp: doc.timestamp.toISOString(),
+        occurredAt: iso,
+        timestamp: iso,
         orderId: doc.orderId,
         userId: doc.userId,
         type: doc.type,

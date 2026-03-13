@@ -17,6 +17,8 @@ export interface Order {
 
 export interface TimelineEvent {
   eventId: string;
+  /** ISO 8601 time when the event occurred (authoritative). */
+  occurredAt: string;
   timestamp: string;
   orderId: string;
   userId: string;
